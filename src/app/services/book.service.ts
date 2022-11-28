@@ -45,7 +45,7 @@ export class BookService {
   }
 
   public findById(id: string): Observable<any> {
-    const promise = this.firestore.collection("collaborators").doc(id).get();
+    const promise = this.firestore.collection("bibliotech").doc(id).get();
     return from(promise).pipe(
       map(doc => {
         const book: Book = doc.data() as Book;

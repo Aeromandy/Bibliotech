@@ -33,8 +33,6 @@ export class NewBookComponent implements OnInit {
       isbn: ["", [Validators.required]],
       status: ["", [Validators.required]],
       cidade: ["", [Validators.required]],
-      /* remuneracao: ["", [Validators.required, Validators.min(0)]],
-      email: ["", [Validators.required, Validators.email]], */
     });
   }
 

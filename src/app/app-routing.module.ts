@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 import { CadastrarUsuarioComponent } from './views/cadastrar-usuario/cadastrar-usuario.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate:[ AuthGuard ],
     title: "Home | Bibliotech"
   },
   {
@@ -29,13 +31,13 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: NewBookComponent,
-    /* canActivate: [ AuthGuard ], */
+    canActivate: [ AuthGuard ],
     title: "Novo Book | Bibliotech"
   },
   {
     path: 'dashboard/new',
     component: NewBookComponent,
-    /* canActivate: [ AuthGuard ], */
+    canActivate: [ AuthGuard ],
     title: "Novo Book | Bibliotech"
   },
 ];
