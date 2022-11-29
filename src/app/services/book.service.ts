@@ -61,7 +61,7 @@ export class BookService {
   }
 
   public deleteBook(id: string) {
-    const promise = this.firestore.collection("book").doc(id).delete();
+    const promise = this.firestore.collection("bibliotech").doc(id).delete();
     return from(promise).pipe(
       catchError(error => {
         this.notification.showMessage("Erro ao excluir.");

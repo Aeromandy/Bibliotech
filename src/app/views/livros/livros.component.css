@@ -1,0 +1,15 @@
+table {
+    background-color: #F0F0F0;
+    width: 100%;
+}
+
+table th {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table-container {
+    height: 350px;
+    overflow: auto;
+}

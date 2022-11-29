@@ -24,4 +24,15 @@ export class UploadService {
       })
     );
   }
+
+  public deleteFoto(id: string): Observable<any> {
+    const promise = this.storage.refFromURL(id).delete();
+    return from(promise).pipe(
+      catchError(error => {
+        this.notification.showMessage("Erro ao deletar imagem.");
+        console.error(error);
+        return EMPTY;
+      })
+    );
+  }
 }

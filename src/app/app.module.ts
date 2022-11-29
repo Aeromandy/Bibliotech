@@ -8,15 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './views/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './views/home/home.component';
 import { CadastrarUsuarioComponent } from './views/cadastrar-usuario/cadastrar-usuario.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { NewBookComponent } from './views/new-book/new-book.component';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
-
+import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
+import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo.component';
+import { LivrosComponent } from './views/livros/livros.component';
+import { PainelComponent } from './views/painel/painel.component';
+import { BookDetailsComponent } from './views/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,11 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     LoginComponent,
     HomeComponent,
     CadastrarUsuarioComponent,
-    NewBookComponent,
-    DashboardComponent
+    EditarEmprestimoComponent,
+    NovoEmprestimoComponent,
+    LivrosComponent,
+    PainelComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    AngularFirestoreModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

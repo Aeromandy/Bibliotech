@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guard/auth.guard';
 import { CadastrarUsuarioComponent } from './views/cadastrar-usuario/cadastrar-usuario.component';
+import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
-import { NewBookComponent } from './views/new-book/new-book.component';
+import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo.component';
+import { LivrosComponent } from './views/livros/livros.component';
+import { PainelComponent } from './views/painel/painel.component';
 
 const routes: Routes = [
   {
@@ -29,17 +32,28 @@ const routes: Routes = [
     title: "Cadastre-se | Bibliotech"
   },
   {
-    path: 'dashboard',
-    component: NewBookComponent,
-    canActivate: [ AuthGuard ],
-    title: "Novo Book | Bibliotech"
+    path: 'livros',
+    component: LivrosComponent,
+    title: "Cadastre-se | Bibliotech"
   },
   {
-    path: 'dashboard/new',
-    component: NewBookComponent,
+    path: 'painel',
+    component: PainelComponent,
     canActivate: [ AuthGuard ],
-    title: "Novo Book | Bibliotech"
+    title: "Painel de Controle | Bibliotech"
   },
+  {
+    path: 'painel/editar/:id',
+    component: EditarEmprestimoComponent,
+    canActivate: [ AuthGuard ],
+    title: "Editar Emprestimo | Bibliotech"
+  },
+  {
+    path: 'painel/new',
+    component: NovoEmprestimoComponent,
+    canActivate: [ AuthGuard ],
+    title: "Novo Emprestimo | Bibliotech"
+  }
 ];
 
 @NgModule({
