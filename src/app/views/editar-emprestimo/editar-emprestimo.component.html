@@ -1,28 +1,23 @@
 <app-header></app-header>
 <div class="container">
-    <h1>Editar Emprestimo</h1>
+    <h2>Editar Emprestimo</h2>
     <form #formEdit="ngForm">
-        <div class="double-width">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Leitor</mat-label>
                 <input type="text" matInput placeholder="Leitor" name="leitor" [(ngModel)]="emprestimo.leitor" required>
             </mat-form-field>
-        </div>
 
-        <div class="double-width">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>E-mail</mat-label>
                 <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="emprestimo.email" required>
             </mat-form-field>
-        </div>
-        <div class="double-width">
+        
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Telefone</mat-label>
                 <input type="text" matInput placeholder="Telefone" name="telefone" [(ngModel)]="emprestimo.telefone" required>
             </mat-form-field>
-        </div>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field class="width" appearance="outline">
             <mat-label>Status</mat-label>
             <mat-select name="status" [(ngModel)]="emprestimo.status" required>
               <mat-option disabled>Selecione o status</mat-option>
@@ -30,16 +25,14 @@
               <mat-option value="devolvido">DEVOLVIDO</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="width" appearance="outline">
             <mat-label>Livros</mat-label>
             <mat-select name="status" [(ngModel)]="emprestimo.livro" required>
               <mat-option disabled>Selecione o livro:</mat-option>
               <mat-option *ngFor="let book of books" [value]="book">{{ book.titulo }}</mat-option>
             </mat-select>
         </mat-form-field>
-        <div class="double-width">
-            <button type="submit" class="full-width btn-submit" mat-raised-button (click)="editarEmprestimo()">Editar</button>
+            <button type="submit" class="full-width btn-submit" mat-raised-button (click)="editarEmprestimo(formEdit)">Editar</button>
             <a class="full-width btn-close" mat-raised-button routerLink="/painel"></a>
-        </div>
     </form>
 </div>

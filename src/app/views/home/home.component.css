@@ -2,18 +2,26 @@
     padding-top: 64px;
     width: 100%;
     height: 100%;
-    background-color: #E6E6E6;
-    background-image: url("/assets/images/studying-animate.svg");
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
+    background: 
+    url("/assets/images/studying-animate.svg"),
+    url("/assets/images/booklover.gif");
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom 40px right 20px, top 150px left 50px;
+    background-size: 50%, 40%;
 }
 
 .home-container h1 {
     width: 15%;
-    font-size: 5vh;
-    line-height: 7vh;
+    font-size: 7vh;
     position: absolute;
-    left: 20%;
-    top: 30%;
+    right: 23%;
+    top: 5%;
+}
+
+.home-container h2 {
+    font-size: 3vh;
+    line-height: 5vh;
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
 }

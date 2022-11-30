@@ -19,7 +19,8 @@ import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-empr
 import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo.component';
 import { LivrosComponent } from './views/livros/livros.component';
 import { PainelComponent } from './views/painel/painel.component';
-import { BookDetailsComponent } from './views/book-details/book-details.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { AvatarPipe } from './pipes/avatar.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BookDetailsComponent } from './views/book-details/book-details.componen
     NovoEmprestimoComponent,
     LivrosComponent,
     PainelComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    AvatarPipe
   ],
   imports: [
     BrowserModule,

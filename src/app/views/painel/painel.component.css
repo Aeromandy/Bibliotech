@@ -12,10 +12,11 @@ table th {
 .table-container {
     height: 350px;
     overflow: auto;
+    width: 100%;
 }
 
 .btn-add {
-    background-color: #92E3A9;
+    background-color: #c1ecbf;
     display: flex;
     justify-content: center;
     align-items: center;

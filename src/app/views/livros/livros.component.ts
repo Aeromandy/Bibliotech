@@ -78,8 +78,10 @@ export class LivrosComponent implements OnInit {
   }
 
   public deleteBook(id: string, fotoUrl: string): void {
-    this.bookService.deleteBook(id).subscribe(response => {
+    if(fotoUrl != ''){
       this.uploadService.deleteFoto(fotoUrl);
+    }
+    this.bookService.deleteBook(id).subscribe(response => {
       this.notification.showMessage("Livro deletado com sucesso.");
       this.initializeFields();
     })

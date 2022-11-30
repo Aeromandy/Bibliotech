@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container">
-    <h1>Painel de Controle</h1>
+    <h2>Painel de Controle</h2>
     <div class="table">
         <section class="table-container mat-elevation-z8" tabindex="0">
             <table mat-table [dataSource]="dataSource">
@@ -24,19 +24,11 @@
                     <th mat-header-cell *matHeaderCellDef> Status </th>
                     <td mat-cell *matCellDef="let emprestimo"> {{ emprestimo.status }} </td>
                 </ng-container>
-
-                <!-- <ng-container matColumnDef="excluir">
-                    <th mat-header-cell *matHeaderCellDef> Excluir </th>
-                    <td mat-cell *matCellDef="let emprestimo">
-                        <button mat-icon-button (click)="deleteEmprestimo(emprestimo.id, book.fotoUrl)">
-                            <i class="material-icons">delete</i>
-                        </button>
-                    </td>
-                </ng-container> -->
+                
                 <ng-container matColumnDef="excluir">
                     <th mat-header-cell *matHeaderCellDef> Excluir </th>
-                    <td mat-cell *matCellDef="let book">
-                        <button mat-icon-button (click)="deleteEmprestimo(book.id, book.fotoUrl)">
+                    <td mat-cell *matCellDef="let emprestimo">
+                        <button mat-icon-button (click)="deletarEmprestimo(emprestimo.id, emprestimo.fotoUrl)">
                             <i class="material-icons">delete</i>
                         </button>
                     </td>
@@ -54,8 +46,8 @@
                 <ng-container matColumnDef="capa">
                     <th mat-header-cell *matHeaderCellDef> Capa </th>
                     <td mat-cell *matCellDef="let emprestimo">
-                        <button mat-button>
-                            <img src="{{ emprestimo.livro.fotoUrl }}" alt="capa">
+                        <button mat-button (click)="openDetails(emprestimo.livro)">
+                            <img src="{{ emprestimo.livro.fotoUrl | avatar }}" alt="capa">
                         </button>
                     </td>
                 </ng-container>

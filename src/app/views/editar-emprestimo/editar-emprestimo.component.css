@@ -1,4 +1,36 @@
-/* .upload-photo {
+.full-width {
+    width: 100%;
+}
+
+.double-width .full-width {
+    width: 48%;
+}
+
+.width {
+    width: 50%
+}
+
+.btn-submit {
+    margin-top: 30px;
+    background-color: #c1ecbf;
+    color: #FFFFFF;
+}
+
+.btn-submit:hover {
+    background-color: #f6cba3;
+}
+
+.btn-close {
+    margin-top: 30px;
+    background-color: #CA5656;
+    color: #FFFFFF;
+}
+
+.btn-close:hover {
+    background-color: #aa4747;
+}
+
+.upload-photo {
     width: 100%;
     padding: 10px 20px;
     border: 1px solid #BABABA;
@@ -8,4 +40,4 @@
 
 .upload-photo::-webkit-file-upload-button {
     display: none;
-} */
+}

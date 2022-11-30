@@ -4,6 +4,8 @@ import { EmprestimoService } from 'src/app/services/emprestimo.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationService } from 'src/app/services/notification.service';
+import { BookDetailsComponent } from 'src/app/components/book-details/book-details.component';
+import { Book } from 'src/app/models/book';
 
 @Component({
   selector: 'app-painel',
@@ -19,7 +21,7 @@ export class PainelComponent implements OnInit {
   constructor(
     private emprestimoService: EmprestimoService,
     private notification: NotificationService,
-    private dialogo: MatDialog,
+    private dialog: MatDialog,
     private uploadService: UploadService
 
   ) { }
@@ -34,14 +36,20 @@ export class PainelComponent implements OnInit {
     })
   }
 
-  public deleteEmprestimo(id: string, link: string): void {
+  public deletarEmprestimo(id: string, fotoUrl: string): void {
+    /* if(fotoUrl != '' || fotoUrl != undefined){
+      this.uploadService.deleteFoto(fotoUrl);
+    } */
     this.emprestimoService.deletarEmprestimo(id).subscribe(response => {
-      this.uploadService.deleteFoto(link);
-      this.notification.showMessage("Apagado!");
+      this.notification.showMessage("Emprestimo apagado!");
       this.initialize();
     });
   }
 
-  
-
+  public openDetails(book: Book): void {
+    this.dialog.open(BookDetailsComponent, {
+      width: "400px",
+      data: book
+    });
+  }
 }

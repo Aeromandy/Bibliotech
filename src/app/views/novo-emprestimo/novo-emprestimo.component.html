@@ -1,28 +1,25 @@
 <app-header></app-header>
 <div class="container">
-    <h1>Novo Emprestimo</h1>
+    <h2>Novo Emprestimo</h2>
     <form [formGroup]="formEmprestimo">
-        <div class="double-width">
+    
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Leitor</mat-label>
                 <input type="email" matInput placeholder="Leitor" formControlName="leitor">
             </mat-form-field>
-        </div>
-
-        <div class="double-width">
+        
+       
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>E-mail</mat-label>
                 <input type="email" matInput placeholder="Email" formControlName="email">
             </mat-form-field>
-        </div>
-        <div class="double-width">
+        
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Telefone</mat-label>
                 <input type="text" matInput placeholder="Telefone" formControlName="telefone">
             </mat-form-field>
-        </div>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field class="width" appearance="outline">
             <mat-label>Status</mat-label>
             <mat-select formControlName="status">
               <mat-option disabled>Selecione o status</mat-option>
@@ -30,7 +27,7 @@
               <mat-option value="devolvido">DEVOLVIDO</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field class="width" appearance="outline">
             <mat-label>Livros</mat-label>
             <mat-select formControlName="livro">
               <mat-option disabled>Selecione o livro:</mat-option>
@@ -38,11 +35,10 @@
 
             </mat-select>
         </mat-form-field>
-        <div class="double-width">
             <button type="submit" class="full-width btn-submit" mat-raised-button (click)="novoEmprestimo()">Emprestar</button>
             <a class="full-width btn-close" mat-raised-button routerLink="/painel"></a>
-        </div>
     </form>
 </div>
+
 
 

@@ -4,6 +4,7 @@ mat-toolbar {
     justify-content: space-between;
     position: fixed;
     top: 0;
+    background: #c1ecbf;
 }
 
 #logout {

@@ -1,8 +1,8 @@
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';
 import { NotificationService } from '../../services/notification.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Emprestimo } from 'src/app/models/emprestimo';
 import { EmprestimoService } from 'src/app/services/emprestimo.service';
@@ -36,25 +36,24 @@ export class EditarEmprestimoComponent implements OnInit {
     private bookService: BookService,
     private router: Router,
     private emprestimoService: EmprestimoService,
-    private route: Route
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.listBooks();
+    this.initializaFields();
   }
 
-  public inicilizarCampos(): void {
+  public initializaFields(): void {
     const id = this.route.snapshot.params["id"];
     this.emprestimoService.listarPorId(id).subscribe(emprestimo  => {
       this.emprestimo = emprestimo;
     })
   }
 
-  public editarEmprestimo(): void {
-    if (this.formEmprestimo.valid) {
-      const emprestimo: Emprestimo = this.formEmprestimo.value;
-      emprestimo.data = new Date().toLocaleDateString();
-      this.emprestimoService.novoEmprestimo(emprestimo).subscribe(response => {
+  public editarEmprestimo(form: NgForm): void {
+    if (form.valid) {
+      this.emprestimoService.atualizarEmprestimo(this.emprestimo).subscribe(response => {
         this.notification.showMessage("Emprestimo cadastrado!");
         this.router.navigate(['/painel/new']);
       })
